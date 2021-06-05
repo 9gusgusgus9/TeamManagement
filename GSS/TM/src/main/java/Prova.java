@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
-import entity.Entity;
 import entity.Society;
 import entity.Sport;
 import utilities.Utilities;
