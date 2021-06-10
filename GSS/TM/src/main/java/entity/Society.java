@@ -1,13 +1,18 @@
 package entity;
 
 import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
 
-public class Society implements Entity {
-	
-	String partitaIVA;
-	String nome;
-	Sport sport;
-	BufferedImage image;
+import utilities.Utilities;
+
+public class Society extends Entity {
+
+	public final static String TABLENAME="societa";
+	private String partitaIVA;
+	private String nome;
+	private Sport sport;
+	private BufferedImage image;
 	
 	public Society(String partitaIVA, String nome, Sport sport){
 		this.partitaIVA=partitaIVA;
@@ -22,20 +27,10 @@ public class Society implements Entity {
 		this.image=image;
 	}
 	
-	@Override
 	public String getPrimaryKey() {
 		return this.partitaIVA;
 	}
 
-	@Override
-	public void insert() {
-		
-	}
-
-	@Override
-	public void delete() {
-		
-	}
 
 	public String getNome() {
 		return nome;
@@ -48,8 +43,10 @@ public class Society implements Entity {
 	public BufferedImage getImage() {
 		return image;
 	}
-	
-	
 
-	
+	@Override
+	public String getTableName() {
+		return Society.TABLENAME;
+	}
+
 }

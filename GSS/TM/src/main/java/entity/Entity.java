@@ -1,11 +1,31 @@
 package entity;
 
-public interface Entity {
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
 
-	String getPrimaryKey();
+import utilities.Utilities;
+
+public abstract class Entity {
+
+	//String getPrimaryKey();
 	
-	void insert();
+	public void insert() {
+		try {
+			Utilities.insertEntity(this);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
-	void delete();
+	public void delete() {
+		try {
+			Utilities.deleteEntity(this);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
+	public abstract String getTableName();
 }

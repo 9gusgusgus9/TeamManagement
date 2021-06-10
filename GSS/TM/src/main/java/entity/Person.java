@@ -1,5 +1,10 @@
 package entity;
 
-public interface Person extends Entity{
-	
+public class Person extends Entity{
+	public final static String TABLENAME="persona";
+
+	@Override
+	public String getTableName() {
+		return null;
+	}
 }
