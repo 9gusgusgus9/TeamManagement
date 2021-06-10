@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import utilities.Utilities;
 
 public abstract class Entity {
-
-	//String getPrimaryKey();
 	
 	public void insert() {
 		try {
@@ -28,4 +26,10 @@ public abstract class Entity {
 	}
 	
 	public abstract String getTableName();
+	
+	public abstract Object getPrimaryKey();
+
+	public abstract String getColumnList();
+	
+	public abstract String getValues();
 }
